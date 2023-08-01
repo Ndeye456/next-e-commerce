@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { Store } from "../utils/Store";
-import XCircleIcon from "@heroicons/react/24/outline/XCircleIcon";
+import XCircleIcon  from "@heroicons/react/24/outline/XCircleIcon";
 import Layout from "../components/Layout";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+ import dynamic from "next/dynamic";
 
-export default function CartScreen() {
+ function CartScreen() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const {
@@ -14,6 +15,10 @@ export default function CartScreen() {
   } = state;
   const removeItemHandler = (item) => {
     dispatch({ type: "CART_REMOVE_ITEM", payload: item });
+  };
+  const updateCartHandler = (item, qty) => {
+    const quantity = Number(qty);
+    dispatch({ type: "CART_ADD_ITEM", payload: { ...item, quantity } });
   };
   return (
     <Layout title="Shopping Cart">
@@ -52,7 +57,20 @@ export default function CartScreen() {
                         {item.name}
                       </Link>
                     </td>
-                    <td className="p-5 text-right">{item.quantity}</td>
+                    <td className="p-5 text-right">
+                      <select
+                        value={item.quantity}
+                        onChange={(e) =>
+                          updateCartHandler(item, e.target.value)
+                        }
+                      >
+                        {[...Array(item.countInStock).keys()].map((x) => (
+                          <option key={x + 1} value={x + 1}>
+                            {x + 1}
+                          </option>
+                        ))}
+                      </select>
+                    </td>
                     <td className="p-5 text-right">{item.price}CFA</td>
                     <td className="p-5 text-center">
                       <button onClick={() => removeItemHandler(item)}>
@@ -68,8 +86,8 @@ export default function CartScreen() {
             <ul>
               <li>
                 <div className="pb-3 text-xl">
-                  Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : (
-                  {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)})CFA
+                  Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : 
+                  {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}CFA
                 </div>
               </li>
               <li>
@@ -87,3 +105,4 @@ export default function CartScreen() {
     </Layout>
   );
 }
+export default dynamic(() => Promise.resolve(CartScreen), { ssr: false });

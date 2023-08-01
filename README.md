@@ -37,3 +37,9 @@ description
    2. use context to get cart items
    3. list items in cart items
    4. redirect to cart screen after add to cart
+10. Mettre à jour la quantité dans le panier
+    1. ajouter une case de sélection pour la quantité
+    2. gérer le changement de case de sélection
+11. Enregistrer les articles du panier
+   1. installer le paquet js-cookie
+   2. enregistrer et récupérer les éléments du panier dans les cookies
