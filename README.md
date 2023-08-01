@@ -31,15 +31,25 @@ description
    3. create addd to cart action
    4. add reducer
    5. create store provider
-    6. handle add to cart button
+   6. handle add to cart button
 9. Create Cart Page
    1. create cart.js
    2. use context to get cart items
    3. list items in cart items
    4. redirect to cart screen after add to cart
-10. Mettre à jour la quantité dans le panier
-    1. ajouter une case de sélection pour la quantité
-    2. gérer le changement de case de sélection
-11. Enregistrer les articles du panier
-   1. installer le paquet js-cookie
-   2. enregistrer et récupérer les éléments du panier dans les cookies
+10. Update Quantity In The Cart
+   1. add select box for quantity
+   2. handle select box change
+11. Save Cart Items
+   1. install js-cookie package
+   2. save and retreive cart items in cookies
+12. Create Login Form
+   1. install react hook form
+   2. create input boxes
+   3. add login button
+13. Connect To MongoDB
+   1. install mongoose
+   2. install mongodb or use mongodb atlas
+   3. save connection url in .env file
+   4. create db utils file
+   5. create sample users
