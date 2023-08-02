@@ -1,20 +1,20 @@
-// import A1 from "../../public/images/A1"
+import bcrypt from 'bcryptjs'
 const data = {
 
-//   users: [
-//     {
-//       name: 'John',
-//       email: 'admin@example.com',
-//       password: bcrypt.hashSync('123456'),
-//       isAdmin: true,
-//     },
-//     {
-//       name: 'Jane',
-//       email: 'user@example.com',
-//       password: bcrypt.hashSync('123456'),
-//       isAdmin: false,
-//     },
-//   ],
+  users: [
+    {
+      name: 'Ndeye Amie',
+      email: 'admin@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: true,
+    },
+    {
+      name: 'Sibo',
+      email: 'user@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
       name: ' Jupe',
