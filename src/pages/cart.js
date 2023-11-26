@@ -92,7 +92,7 @@ import { useRouter } from "next/router";
               </li>
               <li>
                 <button
-                  onClick={() => router.push("login?redirect=/shopping")}
+                  onClick={() => router.push("login?redirect=/shipping")}
                   className="primary-button w-full"
                 >
                   Check Out

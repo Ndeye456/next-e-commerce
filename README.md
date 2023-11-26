@@ -62,3 +62,16 @@ description
    1. check user authentication
    2. install headlessui
    3. show user menu
+16. Create Shipping Screen
+    1. display address fields
+    2. save address in context
+17. Create Payment Method Screen
+    1. dispaly payment methods
+    2. save payment method in context
+18. Seed sample products
+    1. create product model in mongoose
+    2. insert sample products to mongodb
+19. Load Products MongoDB
+   1. load products in home page from mongodb
+   2. load products in product page from mongodb
+   3. use product api to check count in stock in add to cart

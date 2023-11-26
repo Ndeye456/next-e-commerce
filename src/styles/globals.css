@@ -37,10 +37,10 @@ textarea {
   @apply rounded border p-2  outline-none ring-indigo-300  focus:ring;
 }
 
-/*.dropdown-link {
+ .dropdown-link {
   @apply flex p-2 hover:bg-gray-200;
 }
-
+/*
 .alert-error {
   @apply my-3 rounded-lg bg-red-100 p-3 text-red-700;
 }

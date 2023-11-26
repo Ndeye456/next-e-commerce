@@ -13,7 +13,13 @@ const data = {
       email: 'user@example.com',
       password: bcrypt.hashSync('123456'),
       isAdmin: false,
+    }, {
+      name: 'Rama',
+      email: 'rama@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: false,
     },
+
   ],
   products: [
     {
