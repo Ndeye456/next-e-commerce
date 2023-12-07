@@ -4,8 +4,7 @@ import { toast } from 'react-toastify';
 import Cookies from 'js-cookie';
 import CheckoutWizard from '../components/CheckoutWizard';
 import Layout from '../components/Layout';
-import {Store} from '../utils/Store';
-
+import { Store } from '../utils/Store';
 
 export default function PaymentScreen() {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');
@@ -44,7 +43,7 @@ export default function PaymentScreen() {
       <CheckoutWizard activeStep={2} />
       <form className="mx-auto max-w-screen-md" onSubmit={submitHandler}>
         <h1 className="mb-4 text-xl">Payment Method</h1>
-        {['PayPal', 'Stripe', 'Livraison'].map((payment) => (
+        {['PayPal', 'Stripe', 'CashOnDelivery'].map((payment) => (
           <div key={payment} className="mb-4">
             <input
               name="paymentMethod"
@@ -74,5 +73,3 @@ export default function PaymentScreen() {
     </Layout>
   );
 }
-
-PaymentScreen.auth = true;
